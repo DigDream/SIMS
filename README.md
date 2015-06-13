@@ -42,7 +42,7 @@
 
 ##部分设计文档
 
-[DesignDoc]()
+[DesignDoc](https://github.com/DigDream/SIMS/blob/master/DesignDoc.md)
 
 ##致谢
 
@@ -55,7 +55,8 @@
 ##TODO
 
 1.写关于java的RBAC的个人实践。
+
 2.
 
 ##后记
-一支穿云箭，千军万
+一支穿云箭，千军万马来相见。

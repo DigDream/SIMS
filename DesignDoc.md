@@ -4,7 +4,7 @@
 在程序一开始的时候需要初始化一些数据，学生的基本信息，可以设计个工具类，进行单例的初始化。
 
 ##数据库加密
-在MySql安全配置方面，参考[](http://www.freebuf.com/articles/database/36777.html)，
+在MySql安全配置方面，参考[freebuf](http://www.freebuf.com/articles/database/36777.html)，
 
 ##整体设计
 首先是初始化数据，然后登录界面，通过与数据库保存的密码进行判断。
@@ -64,6 +64,7 @@ utils放一些工具类，
 
 提供.config文件进行数据库连接信息加密保存
 
+ISFISRT=
 DB_ADD=
 DB_USER=
 DB_PASSWORD=
