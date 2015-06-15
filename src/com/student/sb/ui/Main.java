@@ -21,14 +21,19 @@ public class Main extends JFrame {
 		}
 		UIManager.put("RootPane.setupButtonVisible", false);
 		Main mJframe = new Main();
-		mJframe.setBounds(100, 100, 300, 300);
+		mJframe.setBounds((getScreenWidth() - 300) / 2, (getScreenHeight() - 300) / 2, 300, 300);
 		mJframe.setVisible(true);
+		mJframe.setTitle("SIMS-学生信息管理系统");
 		
-		System.out.println(PropertiesUtils.readKey("ISFIRST"));
-		System.out.println(PropertiesUtils.readKey("ISFIST").equals("1"));
 		System.out.println(PropertiesUtils.readKey("ISFIRST").equals("true"));
-		
-
+	}
+	
+	public static int getScreenHeight(){
+		return ((int)java.awt.Toolkit.getDefaultToolkit().getScreenSize().height);
+	}
+	
+	public static int getScreenWidth(){
+		return ((int)java.awt.Toolkit.getDefaultToolkit().getScreenSize().width);
 	}
 
 }
