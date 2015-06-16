@@ -50,4 +50,8 @@ public class SqlUtils {
 
 	}
 
+	public void closeConn() {
+
+	}
+
 }

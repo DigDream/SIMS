@@ -1,4 +1,4 @@
-package com.student.sb.dao;
+package com.student.sb.entity;
 
 public class Student {
 	public String name;

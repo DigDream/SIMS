@@ -3,8 +3,10 @@
 ##初始化数据
 在程序一开始的时候需要初始化一些数据，学生的基本信息，可以设计个工具类，进行单例的初始化。
 
+初始化数据的格式：sql
+
 ##数据库加密
-在MySql安全配置方面，参考[freebuf](http://www.freebuf.com/articles/database/36777.html)，
+在MySql安全配置方面，参考[freebuf](http://www.freebuf.com/articles/database/36777.html)。
 
 ##整体设计
 首先是初始化数据，然后登录界面，通过与数据库保存的密码进行判断。
@@ -16,7 +18,7 @@
 
 ui包主要是界面方面的代码
 
-dao是数据库操作类
+dao是数据库操作模型类
 
 utils放一些工具类，
 
@@ -24,11 +26,15 @@ utils放一些工具类，
 	SqlUtils.java:
 	StringUtils.java:
 	HttpUtils.java:
+	security:加密解密部分工具类
 
-利用到的设计模式：
+利用的设计模式：
 
 策略模式：工具类里的加密解密类。
-单例模式：
+
+单例模式：设置类、Dao访问
+
+模板方法模式：
 
 ##密码存储方面
 密码使用hash函数进行加密，并且使用随机的salt作为加密的前缀或者后缀。
@@ -65,15 +71,19 @@ utils放一些工具类，
 
 提供.config文件进行数据库连接信息加密保存
 
-ISFISRT=
-DB_ADD=
-DB_USER=
-DB_PASSWORD=
-DB_PORT=
+	ISFISRT=
+	DB_ADD=
+	DB_USER=
+	DB_PASSWORD=
+	DB_PORT=
 
 ##遇到的一些坑
 
-0x01 java的getResourceAsStream只能读取到源文件夹，或者是类文件夹，在打包部署时需要注意。
+0x01 java的getResourceAsStream
+
+只能读取到源文件夹，或者是类文件夹，在打包部署时需要注意。
+
+0x02 如何使用java注解
 
 ##关于是否使用ORM框架
 
