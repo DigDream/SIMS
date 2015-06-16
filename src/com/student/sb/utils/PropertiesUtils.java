@@ -20,13 +20,13 @@ public class PropertiesUtils {
 			e.printStackTrace();
 		}
 	}
-	
-	public static String readKey(String key){
+
+	public static String readKey(String key) {
 		initialize();
 		return props.getProperty(key);
 	}
-	
-	public static void writeKey(String key, String value){
+
+	public static void writeKey(String key, String value) {
 		initialize();
 		props.setProperty(key, value);
 	}
