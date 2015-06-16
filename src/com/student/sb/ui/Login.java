@@ -32,7 +32,7 @@ public class Login extends BaseJFrame implements ActionListener{
 
 		JButton btnlogin = new JButton("登录");
 		btnlogin.addActionListener(this);
-		BEButtonUI.createUI(btnlogin);
+		btnlogin.setUI(new BEButtonUI().setNormalColor(BEButtonUI.NormalColor.lightBlue));
 
 		getContentPane().add(jlabel);
 		getContentPane().add(jtfuser);
