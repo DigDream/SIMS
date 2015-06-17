@@ -83,6 +83,8 @@ utils放一些工具类，
 
 只能读取到源文件夹，或者是类文件夹，在打包部署时需要注意。
 
+文件流为PropertiesUtils.class.getClassLoader().getResource(PROPERTIES_FILE_NAME);
+
 0x02 如何使用java注解
 
 0x03 properties文件写入权限

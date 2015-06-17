@@ -127,7 +127,7 @@ public class SqlInit extends BaseJFrame {
 		// 测试是否能连接数据库，连接不上则显示数据库界面
 		try {
 			SqlUtils.isConnectSql();
-			Login mJframe = new Login();
+			Main mJframe = new Main();
 		} catch (Exception e) {
 			SqlInit sqlInit = new SqlInit();
 			e.printStackTrace();

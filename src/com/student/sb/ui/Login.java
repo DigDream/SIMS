@@ -20,10 +20,11 @@ public class Login extends BaseJFrame implements ActionListener{
 		this.setTitle("登录界面");
 		this.setBounds((getScreenWidth() - 300) / 2,
 				(getScreenHeight() - 200) / 2, 300, 200);
+		this.setResizable(false);
 
 		getContentPane().setLayout(new GridLayout(4, 1, 10, 10));
 
-		JLabel jlabel = new JLabel("请输入您的用户名和密码", JLabel.CENTER);
+		JLabel jlabel = new JLabel("数据库连接正常，请输入您的用户名和密码", JLabel.CENTER);
 		jtfuser = new JTextField();
 		jtfpass = new JPasswordField();
 		jtfpass.addActionListener(this);

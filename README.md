@@ -5,11 +5,11 @@
 
 此处应该有图片。
 
+![](screenshot/Screenshot3.png)
+
 ![](screenshot/Screenshot1.png)
 
 ![](screenshot/Screenshot2.png)
-
-论打码技术的优雅性，以及避免PS色阶突破、隐写术。
 
 ##功能
 
@@ -28,7 +28,7 @@
 
 可以使用git clone命令下载源码。
 
-	git clone www.git
+	git clone https://github.com/DigDream/SIMS.git
 
 也可通过launchpad直接下载
 
@@ -37,6 +37,45 @@
 ##安装及使用
 
 双击可执行文件，或者根据源码进行编译。
+
+编辑.properties文件，将数据库连接信息填入文件。
+
+数据库表段：
+
+	DROP TABLE IF EXISTS `user`;
+	CREATE TABLE `user_table` (
+	  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+	  `user` varchar(20) NOT NULL,
+	  `pw` varchar(50) NOT NULL,
+	  `name` varchar(20) NOT NULL,
+	  `phone` varchar(20) NOT NULL,
+	  KEY `id` (`id`)
+	) ENGINE=MyISAM AUTO_INCREMENT=912 DEFAULT CHARSET=utf8;
+	
+	DROP TABLE IF EXISTS `software`;
+	CREATE TABLE `software` (
+	  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+	  `collage` varchar(25) DEFAULT NULL,
+	  `grade` varchar(10) DEFAULT NULL,
+	  `class` varchar(10) DEFAULT NULL,
+	  `student_id` varchar(12) DEFAULT NULL,
+	  `name` varchar(12) DEFAULT NULL,
+	  `sex` varchar(5) DEFAULT NULL,
+	  `nation` varchar(7) DEFAULT NULL,
+	  `phone` varchar(12) DEFAULT NULL,
+	  `dorm` varchar(8) DEFAULT NULL,
+	  `politics` varchar(12) DEFAULT NULL,
+	  `identity_id` varchar(21) DEFAULT NULL,
+	  `home_phone` varchar(36) DEFAULT NULL,
+	  `zip` varchar(10) DEFAULT NULL,
+	  `address` varchar(90) DEFAULT NULL,
+	  `native_palce` varchar(59) DEFAULT NULL,
+	  `family_backgrond` varchar(250) DEFAULT NULL,
+	  `reward` varchar(250) DEFAULT NULL,
+	  `other` varchar(250) DEFAULT NULL,
+	  `duty` varchar(25) NOT NULL,
+	  PRIMARY KEY (`id`)
+	) ENGINE=MyISAM AUTO_INCREMENT=1099 DEFAULT CHARSET=utf8;
 
 双击之后，填写数据库连接信息后，会弹出帐号登录的对话框，测试帐号为test，密码为test。
 

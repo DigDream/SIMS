@@ -45,6 +45,7 @@ public class PropertiesUtils {
 			props.setProperty("DB_USER", User);
 			props.setProperty("DB_PASSWORD", Pass);
 			props.store(fos, "Update" + add + "is" + Port + User);
+			fos.flush();
 			in.close();
 			fos.close();
 			props.clear();

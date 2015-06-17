@@ -33,7 +33,7 @@ public class SqlUtils {
 
 	}
 
-	public void closeConn() {
+	public static void closeConn() {
 		try {
 			conn.close();
 		} catch (SQLException e) {

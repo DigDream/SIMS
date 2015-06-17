@@ -1,0 +1,3 @@
+#可以通过本项目学到的知识
+##0x01 Properties配置信息
+利用java的Properties进行配置信息
