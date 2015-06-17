@@ -2,6 +2,7 @@ package com.student.sb.entity;
 
 public class Student {
 	public String name;
+	public String studentid;
 	public String collage;
 	public String grade;
 	public String sclass;

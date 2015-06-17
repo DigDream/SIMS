@@ -105,12 +105,18 @@ public class Main extends BaseJFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if (e.getActionCommand().equals("")) {
+		if (e.getActionCommand().equals("查询")) {
+			System.out.println("sdf");
 
-		} else if (e.getActionCommand().equals("")) {
+		} else if (e.getActionCommand().equals("删除")) {
+			System.out.println("sd1f");
 
-		} else if (e.getActionCommand().equals("")) {
+		} else if (e.getActionCommand().equals("增加")) {
+			System.out.println("sdf2");
 
+		} else if(e.getActionCommand().equals("修改")) {
+			System.out.println("sdf4");
+			
 		}
 
 	}

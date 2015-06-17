@@ -14,7 +14,6 @@
 ##功能
 
  + 可以查询学生的基本信息。
- + 分权限控制用户进行操作(RBAC)。
  + 增删改查学生信息。
 
 ##发布及部分思路
@@ -30,15 +29,17 @@
 
 	git clone https://github.com/DigDream/SIMS.git
 
-也可通过launchpad直接下载
+~~也可通过launchpad直接下载~~
 
-	brunch
+	//brunch
 
 ##安装及使用
 
 双击可执行文件，或者根据源码进行编译。
 
 编辑.properties文件，将数据库连接信息填入文件。
+
+数据库名为：sxaustudents，可自行更改。
 
 数据库表段：
 
@@ -87,25 +88,60 @@
 
 [DesignDoc](https://github.com/DigDream/SIMS/blob/master/DesignDoc.md)
 
-[]()
+[AdvancedDoc](https://github.com/DigDream/SIMS/blob/master/AdvancedDoc.md)
+
+[LearnDoc](https://github.com/DigDream/SIMS/blob/master/LearnDoc.md)
 
 ##致谢
 
 + beautyeye框架
-+ sqlite
 + chromebook
 + Java Development Kit
 + mysql-connecter
++ sqlite
 
 ##TODO
 
 1.写关于java的RBAC的个人实践。
 
-2.
+2.分权限控制用户进行操作(RBAC)。
 
 ##关键词
 
 JAVA MVC DAO SINGLETON JDBC MYSQL INTERFACES
 
 ##后记
+
 一支穿云箭，千军万马来相见。
+
+在无感之夜，流离。
+
+最初，枉想，然氛围。
+
+缺开放，交流。
+
+希激励，却应付。
+
+实不利，然无他。
+
+青春梦，即以死。
+
+遂实现，高耦合。
+
+虽已知，应重文档。
+
+贵抄袭，实无利。
+
+难有调试，却性能之困。
+
+少浮躁，难静心。
+
+积跬步，向底层。
+
+勤思考，寻经验。
+
+忌本末，莫倒置。
+
+##另微信公众帐号可以方便地实现需求
+
+虽然最后还是应付了事，但是最后总结几篇文章吧。
