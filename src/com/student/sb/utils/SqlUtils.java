@@ -8,42 +8,25 @@ public class SqlUtils {
 	static Connection conn;
 	static String driver = "com.mysql.jdbc.Driver";
 
-	public static void setConnection(String url, String user, String password) {
+	public static void setConnection(String url, String user, String password)
+			throws SQLException {
 		try {
 			Class.forName(driver);
+			System.out.println(url);
 			conn = DriverManager.getConnection(url, user, password);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-		} catch (SQLException e) {
-			System.out.println("数据库连接失败");
 		}
 	}
 
-	public static boolean isConnectSql() {
+	public static void isConnectSql() throws SQLException {
 		// 首先读取配置
-		System.out.println(PropertiesUtils.readKey("DB_ADD")
-				+ PropertiesUtils.readKey("DB_PORT")
-				+ PropertiesUtils.readKey("DB_USER")
-				+ PropertiesUtils.readKey("DB_PASSWORD")
-				+ PropertiesUtils.readKey("DB_TABLE"));
 		// 连接测试
 		String url = "jdbc:mysql://" + PropertiesUtils.readKey("DB_ADD") + ":"
 				+ PropertiesUtils.readKey("DB_PORT") + "/"
 				+ PropertiesUtils.readKey("DB_TABLE");
-		try {
-
-			setConnection(url, PropertiesUtils.readKey("DB_USER"),
-					PropertiesUtils.readKey("DB_PASSWORD"));
-
-			if (conn.isValid(500))
-				return true;
-			else {
-				return false;
-			}
-		} catch (SQLException e) {
-			System.out.println("数据库连接失败");
-			return false;
-		}
+		setConnection(url, PropertiesUtils.readKey("DB_USER"),
+				PropertiesUtils.readKey("DB_PASSWORD"));
 	}
 
 	public void execSql(String sql) {
@@ -51,7 +34,11 @@ public class SqlUtils {
 	}
 
 	public void closeConn() {
-
+		try {
+			conn.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

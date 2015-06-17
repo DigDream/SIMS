@@ -47,7 +47,6 @@ public class SqlInit extends BaseJFrame {
 		JLabel jlabel2 = new JLabel("连接端口：");
 		JLabel jlabel3 = new JLabel("连接用户：");
 		JLabel jlabel4 = new JLabel("连接密码：");
-		
 
 		jtf = new JTextField(27);
 		jtf2 = new JTextField(27);
@@ -57,47 +56,52 @@ public class SqlInit extends BaseJFrame {
 		BETextFieldUI.createUI(jtf2);
 		BETextFieldUI.createUI(jtf3);
 		BEPasswordFieldUI.createUI(jtf4);
-		
+
 		JPanel panAdd = new JPanel(new FlowLayout());
 		panAdd.add(jlabel1);
 		panAdd.add(jtf);
-		
+
 		JPanel panPort = new JPanel(new FlowLayout());
 		panPort.add(jlabel2);
 		panPort.add(jtf2);
-		
+
 		JPanel panUser = new JPanel(new FlowLayout());
 		panUser.add(jlabel3);
 		panUser.add(jtf3);
-		
+
 		JPanel panPass = new JPanel(new FlowLayout());
 		panPass.add(jlabel4);
 		panPass.add(jtf4);
 
 		JButton button = new JButton("保存");
 
-		button.setUI(new BEButtonUI().setNormalColor(BEButtonUI.NormalColor.lightBlue));
+		button.setUI(new BEButtonUI()
+				.setNormalColor(BEButtonUI.NormalColor.lightBlue));
 		button.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				// 保存信息
+				PropertiesUtils.writeConn(jtf.getText(), jtf2.getText(),
+						jtf3.getText(), String.valueOf(jtf4.getPassword()));
 				// 测试连接
 				try {
-					SqlUtils.isConnectSql();
+					String url = "jdbc:mysql://" + jtf.getText() + ":"
+							+ jtf2.getText() + "/";
+					
+					SqlUtils.setConnection(url, jtf3.getText(),
+							String.valueOf(jtf4.getPassword()));
 				} catch (Exception e1) {
-					JOptionPane.showMessageDialog(
-						    null,
-						    "请重新填写信息",
-						    "数据库连接失败",
-						    JOptionPane.WARNING_MESSAGE
-						);
+					JOptionPane.showMessageDialog(null, "请重新填写信息", "数据库连接失败",
+							JOptionPane.WARNING_MESSAGE);
 					e1.printStackTrace();
 				}
 				// 如果无法连接则弹出对话框
 				// 初始化数据
-				// 保存信息
-				PropertiesUtils.writeKey("", "");
+				// 创建数据库和表
 				// 跳转界面
+				SqlInit.this.setVisible(false);
+				Login mJframe = new Login();
 
 			}
 		});
@@ -122,11 +126,8 @@ public class SqlInit extends BaseJFrame {
 		UIManager.put("RootPane.setupButtonVisible", false);
 		// 测试是否能连接数据库，连接不上则显示数据库界面
 		try {
-			if (SqlUtils.isConnectSql()) {
-				Login mJframe = new Login();
-			} else {
-				SqlInit sqlInit = new SqlInit();
-			}
+			SqlUtils.isConnectSql();
+			Login mJframe = new Login();
 		} catch (Exception e) {
 			SqlInit sqlInit = new SqlInit();
 			e.printStackTrace();
