@@ -2,7 +2,9 @@ package com.student.sb.utils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class SqlUtils {
 	static Connection conn;
@@ -29,8 +31,42 @@ public class SqlUtils {
 				PropertiesUtils.readKey("DB_PASSWORD"));
 	}
 
-	public void execSql(String sql) {
+	public static int execSql(String sql) {
+		try {
+			Statement stmt = conn.createStatement();
+			int result = stmt.executeUpdate(sql);
+			return result;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return 0;
+	}
 
+	public static String execResultSetSql(String sql) {
+
+		try {
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+			while (rs.next()) {
+				return rs.getString(1);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return sql;
+	}
+
+	public static ResultSet execReturnRS(String sql) {
+		try {
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+			while (rs.next()) {
+				return rs;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 	public static void closeConn() {

@@ -43,19 +43,13 @@
 
 数据库表段：
 
-	DROP TABLE IF EXISTS `user`;
-	CREATE TABLE `user_table` (
-	  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-	  `user` varchar(20) NOT NULL,
-	  `pw` varchar(50) NOT NULL,
-	  `name` varchar(20) NOT NULL,
-	  `phone` varchar(20) NOT NULL,
-	  KEY `id` (`id`)
-	) ENGINE=MyISAM AUTO_INCREMENT=912 DEFAULT CHARSET=utf8;
+	SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+	SET time_zone = "+00:00";
+	CREATE DATABASE IF NOT EXISTS `sxaustudents` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+	USE `sxaustudents`;
 	
-	DROP TABLE IF EXISTS `software`;
-	CREATE TABLE `software` (
-	  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+	CREATE TABLE IF NOT EXISTS `software` (
+	`id` bigint(20) NOT NULL,
 	  `collage` varchar(25) DEFAULT NULL,
 	  `grade` varchar(10) DEFAULT NULL,
 	  `class` varchar(10) DEFAULT NULL,
@@ -74,9 +68,32 @@
 	  `family_backgrond` varchar(250) DEFAULT NULL,
 	  `reward` varchar(250) DEFAULT NULL,
 	  `other` varchar(250) DEFAULT NULL,
-	  `duty` varchar(25) NOT NULL,
-	  PRIMARY KEY (`id`)
-	) ENGINE=MyISAM AUTO_INCREMENT=1099 DEFAULT CHARSET=utf8;
+	  `duty` varchar(25) NOT NULL
+	) ENGINE=MyISAM AUTO_INCREMENT=1103 DEFAULT CHARSET=utf8;
+	
+	CREATE TABLE IF NOT EXISTS `user_table` (
+	`id` bigint(20) NOT NULL,
+	  `user` varchar(20) NOT NULL,
+	  `pw` varchar(50) NOT NULL,
+	  `name` varchar(20) NOT NULL,
+	  `phone` varchar(20) NOT NULL
+	) ENGINE=MyISAM AUTO_INCREMENT=913 DEFAULT CHARSET=utf8;
+	
+	INSERT INTO `user_table` (`id`, `user`, `pw`, `name`, `phone`) VALUES
+	(912, 'test', 'test', 'test', '188888');
+	
+	
+	ALTER TABLE `software`
+	 ADD PRIMARY KEY (`id`);
+	
+	ALTER TABLE `user_table`
+	 ADD KEY `id` (`id`);
+	
+	
+	ALTER TABLE `software`
+	MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1103;
+	ALTER TABLE `user_table`
+	MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=913;
 
 双击之后，填写数据库连接信息后，会弹出帐号登录的对话框，测试帐号为test，密码为test。
 

@@ -88,7 +88,7 @@ public class SqlInit extends BaseJFrame {
 				try {
 					String url = "jdbc:mysql://" + jtf.getText() + ":"
 							+ jtf2.getText() + "/";
-					
+
 					SqlUtils.setConnection(url, jtf3.getText(),
 							String.valueOf(jtf4.getPassword()));
 				} catch (Exception e1) {
@@ -98,7 +98,35 @@ public class SqlInit extends BaseJFrame {
 				}
 				// 如果无法连接则弹出对话框
 				// 初始化数据
-				// 创建数据库和表
+				// 此处应该执行SQL语句
+				// CREATE DATABASE IF NOT EXISTS `sxaustudents` DEFAULT
+				// CHARACTER SET utf8 COLLATE utf8_general_ci;USE
+				// `sxaustudents`;CREATE TABLE IF NOT EXISTS `software` (`id`
+				// bigint(20) NOT NULL, `collage` varchar(25) DEFAULT
+				// NULL,`grade` varchar(10) DEFAULT NULL,`class` varchar(10)
+				// DEFAULT NULL, `student_id` varchar(12) DEFAULT NULL, `name`
+				// varchar(12) DEFAULT NULL, `sex` varchar(5) DEFAULT NULL,
+				// `nation` varchar(7) DEFAULT NULL, `phone` varchar(12) DEFAULT
+				// NULL, `dorm` varchar(8) DEFAULT NULL, `politics` varchar(12)
+				// DEFAULT NULL, `identity_id` varchar(21) DEFAULT NULL,
+				// `home_phone` varchar(36) DEFAULT NULL, `zip` varchar(10)
+				// DEFAULT NULL, `address` varchar(90) DEFAULT NULL,
+				// `native_palce` varchar(59) DEFAULT NULL, `family_backgrond`
+				// varchar(250) DEFAULT NULL, `reward` varchar(250) DEFAULT
+				// NULL, `other` varchar(250) DEFAULT NULL, `duty` varchar(25)
+				// NOT NULL) ENGINE=MyISAM AUTO_INCREMENT=1103 DEFAULT
+				// CHARSET=utf8;CREATE TABLE IF NOT EXISTS `user_table` (`id`
+				// bigint(20) NOT NULL, `user` varchar(20) NOT NULL, `pw`
+				// varchar(50) NOT NULL,`name` varchar(20) NOT NULL,`phone`
+				// varchar(20) NOT NULL) ENGINE=MyISAM AUTO_INCREMENT=913
+				// DEFAULT CHARSET=utf8;INSERT INTO `user_table` (`id`, `user`,
+				// `pw`, `name`, `phone`) VALUES(912, 'test', 'test', 'test',
+				// '188888');ALTER TABLE `software`ADD PRIMARY KEY (`id`);ALTER
+				// TABLE `user_table`ADD KEY `id` (`id`);ALTER TABLE
+				// `software`MODIFY `id` bigint(20) NOT NULL
+				// AUTO_INCREMENT,AUTO_INCREMENT=1103;ALTER TABLE
+				// `user_table`MODIFY `id` bigint(20) NOT NULL
+				// AUTO_INCREMENT,AUTO_INCREMENT=913;
 				// 跳转界面
 				SqlInit.this.setVisible(false);
 				Login mJframe = new Login();
@@ -127,7 +155,7 @@ public class SqlInit extends BaseJFrame {
 		// 测试是否能连接数据库，连接不上则显示数据库界面
 		try {
 			SqlUtils.isConnectSql();
-			Main mJframe = new Main();
+			Login mJframe = new Login();
 		} catch (Exception e) {
 			SqlInit sqlInit = new SqlInit();
 			e.printStackTrace();

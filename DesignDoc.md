@@ -22,7 +22,7 @@ dao是数据库操作模型类
 
 utils放一些工具类，
 
-	SystemUtils.java:获取屏幕大小，
+	SystemUtils.java:获取屏幕分辨率大小，
 	SqlUtils.java:
 	StringUtils.java:
 	HttpUtils.java:
