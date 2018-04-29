@@ -1,6 +1,6 @@
-#学生信息管理系统
+# 学生信息管理系统
 
-##预览
+## 预览
 这是一款可以查询山西农业大学软件学院学生信息的PC软件，使用java构建，然而安卓版只是写UI，移植一下就可以了。基础用户只能查到性别、班级等信息，而高级用户开放了所有接口。并且有测试用户，测试用户有限额的查询次数。
 
 此处应该有图片。
@@ -11,12 +11,12 @@
 
 ![](screenshot/Screenshot2.png)
 
-##功能
+## 功能
 
  + 可以查询学生的基本信息。
  + 增删改查学生信息。
 
-##发布及部分思路
+## 发布及部分思路
 因为java的跨平台性，实际上QT更适合写跨平台应用，然而老师却是要java版本，因为java原生UI比较难看，并且效率低，在找寻合适UI的同时，为了避免重复造轮子，采用了[beautyeye](https://github.com/JackJiang2011/beautyeye)框架。
 
 在加密部分涉及到了非对称加密，利用一种RSA算法，非对称密钥。在帐号限制方面，采用了部分注册软件设计的思路，并且加了压缩壳，在最新版360、百度杀毒、腾讯电脑管家下测试通过。
@@ -33,7 +33,7 @@
 
 	//brunch
 
-##安装及使用
+## 安装及使用
 
 双击可执行文件，或者根据源码进行编译。
 
@@ -42,7 +42,7 @@
 数据库名为：sxaustudents，可自行更改。
 
 数据库表段：
-
+```
 	SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 	SET time_zone = "+00:00";
 	CREATE DATABASE IF NOT EXISTS `sxaustudents` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
@@ -94,14 +94,14 @@
 	MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1103;
 	ALTER TABLE `user_table`
 	MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=913;
-
+```
 双击之后，填写数据库连接信息后，会弹出帐号登录的对话框，测试帐号为test，密码为test。
 
-##协议
+## 协议
 
 本作品依照GPL v3协议，可自由修改版权，并且欢迎在[Github](https://github.com/DigDream/SIMS)上提issue。但是初始化的数据不对外提供，请联系本人或者学院。
 
-##部分设计文档
+## 部分设计文档
 
 [DesignDoc](https://github.com/DigDream/SIMS/blob/master/DesignDoc.md)
 
@@ -109,7 +109,7 @@
 
 [LearnDoc](https://github.com/DigDream/SIMS/blob/master/LearnDoc.md)
 
-##致谢
+## 致谢
 
 + beautyeye框架
 + chromebook
@@ -117,17 +117,17 @@
 + mysql-connecter
 + sqlite
 
-##TODO
+## TODO
 
 1.写关于java的RBAC的个人实践。
 
 2.分权限控制用户进行操作(RBAC)。
 
-##关键词
+## 关键词
 
 JAVA MVC DAO SINGLETON JDBC MYSQL INTERFACES
 
-##后记
+## 后记
 
 一支穿云箭，千军万马来相见。
 
@@ -158,7 +158,3 @@ JAVA MVC DAO SINGLETON JDBC MYSQL INTERFACES
 勤思考，寻经验。
 
 忌本末，莫倒置。
-
-##另微信公众帐号可以方便地实现需求
-
-虽然最后还是应付了事，但是最后总结几篇文章吧。
